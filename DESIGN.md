@@ -6,7 +6,173 @@
 **Status:** Phase-0 Freestanding Kernel — Proof of Concept
 
 ---
+```plantuml
+# MMUKO SYSTEM 
+                    ┌─────────────────────┐
+                    │   MMUKO SYSTEM      │
+                    │─────────────────────│
+                    │ Memory Map          │
+                    │ Vacuum Medium       │
+                    │ Frame of Reference  │
+                    │ Boot Status         │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                ┌───────────────────────────┐
+                │      BOOT SEQUENCE        │
+                └───────────────────────────┘
+                               │
+         ┌─────────────────────┼─────────────────────┐
+         ▼                     ▼                     ▼
 
+┌────────────────┐  ┌────────────────┐  ┌────────────────┐
+│ PHASE 0        │  │ PHASE 1        │  │ PHASE 2        │
+│ Vacuum Medium  │  │ Cubit Rings    │  │ Compass Align  │
+│ Init           │  │ Initialization │  │                │
+└───────┬────────┘  └───────┬────────┘  └───────┬────────┘
+        │                   │                   │
+        ▼                   ▼                   ▼
+
+ G=9.8               MMUKO Byte         Direction Resolution
+ Air=0               ┌───────────┐      Neighbor Analysis
+ Water=0             │ raw_value │
+                     │ cubits[8] │
+                     │ base_idx  │
+                     └─────┬─────┘
+                           │
+                           ▼
+
+                 ┌──────────────────┐
+                 │ CUBIT RING (8)   │
+                 ├──────────────────┤
+                 │ Index            │
+                 │ Bit Value        │
+                 │ Direction        │
+                 │ Spin             │
+                 │ State            │
+                 │ Entanglement     │
+                 └────────┬─────────┘
+                          │
+                          ▼
+
+┌────────────────┐  ┌────────────────┐  ┌────────────────┐
+│ PHASE 3        │  │ PHASE 4        │  │ PHASE 5        │
+│ Entanglement   │  │ Frame Center   │  │ Nonlinear      │
+│ Resolution     │  │                │  │ Resolution     │
+└───────┬────────┘  └───────┬────────┘  └───────┬────────┘
+        │                   │                   │
+        ▼                   ▼                   ▼
+
+ Pair Lookup         Center Base=6       Diamond Traversal
+ (0↔7)               Lookup Table        12→6→8→4→10→2→1
+ (1↔6)               Frame Direction
+ (2↔5)
+
+        │                   │                   │
+        └─────────┬─────────┴─────────┬─────────┘
+                  ▼                   ▼
+
+          ┌─────────────────────────────┐
+          │ Superposition Lookup Table  │
+          ├─────────────────────────────┤
+          │ 12 → SOUTH/NORTH           │
+          │ 10 → SE/NORTH              │
+          │  8 → EAST/WEST             │
+          │  6 → SW/EAST               │
+          │  4 → WEST/EAST             │
+          │  2 → NE/WEST               │
+          │  1 → NORTH/SOUTH           │
+          └─────────────┬──────────────┘
+                        │
+                        ▼
+
+              ┌───────────────────┐
+              │ PHASE 6           │
+              │ Rotation Verify   │
+              └─────────┬─────────┘
+                        │
+                        ▼
+
+                 Rotate 180°
+                       ↓
+                 Rotate 180°
+                       ↓
+                  Original?
+                       │
+               YES ────┘
+                       ▼
+
+             ┌───────────────────┐
+             │ PHASE 7           │
+             │ BOOT COMPLETE     │
+             └───────────────────┘
+```
+
+```plantuml
+Raw Byte (0-255)
+      │
+      ▼
+Base Index = (value % 12) + 1
+      │
+      ▼
+Initialize 8 Cubits
+      │
+      ▼
+Assign Directions
+(N, NE, E, SE, S, SW, W, NW)
+      │
+      ▼
+Assign Spin Values
+      │
+      ▼
+Resolve States
+(UP, DOWN, CHARM, STRANGE)
+      │
+      ▼
+Resolve Entanglement
+      │
+      ▼
+Apply Superposition
+      │
+      ▼
+Frame of Reference
+      │
+      ▼
+Boot Ready
+# INTERNAL FLOW DIAGRAM
+```
+
+## Cubit Ring Visualization
+```plantuml
+                 [0]
+               NORTH
+                  ●
+          [7]           [1]
+      NORTHWEST      NORTHEAST
+           ●             ●
+
+ [6] WEST ●               ● EAST [2]
+
+           ●             ●
+      SOUTHWEST      SOUTHEAST
+          [5]           [3]
+
+                  ●
+               SOUTH
+                [4]
+
+```
+
+```plantuml 
+Cubit {
+    value
+    spin
+    direction
+    state
+    superposed
+    entangled_with
+}
+```
 ## 1. Architectural Overview
 
 MMUKO-BOOT is a **freestanding x86 kernel scaffold** that introduces a non-traditional memory model: every byte is treated as an 8-position **cubit ring** rather than a flat scalar value. The boot sequence does not merely copy data into RAM; it *resolves* each byte through a series of oriented states, local constraints, and relative reference frames until the system converges on a coherent operational basis.
