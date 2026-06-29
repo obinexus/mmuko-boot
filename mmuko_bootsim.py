@@ -1,4 +1,4 @@
-# /mmuko/mmuko_bootsim.py
+# mmuko-boot/mmuko_bootsim.py
 """
 MMUKO-OS Boot Sequence Simulator (from MMUKO-BOOT.PSC)
 This implements the provided pseudocode as a deterministic simulator:
