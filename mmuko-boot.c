@@ -8,7 +8,7 @@
 //
 // Compile with `gcc -o mmuko-boot mmuko-boot.c`
 // MMUKO: Nonlinear, nonpolar OS boot model
-// Core principle: every bit has a spin, a compass direction,
+// Core principle: every bit has a 1/2 spin , a compass direction,
 // and a superposition state. Boot = resolving all states
 // into a coherent frame of reference without lock.
 // ============================================================
