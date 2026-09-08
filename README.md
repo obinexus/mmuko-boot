@@ -1,6 +1,5 @@
 # MMUKO QEMU Boot Scaffold
 
-This turns the MMUKO boot idea into a tiny QEMU-bootable kernel.
 
 Important distinction:
 
@@ -107,6 +106,3 @@ static void mmuko_program_main(MMUKO_System *sys)
 That function is the first MMUKO "program" in this scaffold. It only runs after
 `mmuko_boot(sys)` returns `BOOT_OK`.
 
-Later, you can replace it with a loader that reads a separate payload from disk
-and jumps to it, but compiling the program into the kernel is the simplest way
-to experiment with QEMU first.
