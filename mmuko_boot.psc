@@ -281,5 +281,4 @@ PROGRAM mmuko_os:
 // END OF MMUKO-BOOT.PSC
 // OBINexus R&D — "Don't just boot systems. Boot truthful ones."
 // ============================================================
-@obinexus
-Comment
+
