@@ -361,38 +361,18 @@ Every claim above can be checked against the source:
    ```
 
 ---
-
-## 8. My  cubit classification 
+### 8.  
 ```md
-|  A |  B |  C | My  cubit classification  | Consensus | Value |
-| -: | -: | -: | -------------------------- | --------- | ----: |
-|  1 |  1 |  1 | `UP`                       | YES       |     1 |
-|  1 |  1 |  0 | `STRANGE`                  | YES       |     1 |
-|  1 |  1 | -1 | Unassigned                 | YES       |     1 |
-|  1 |  0 |  1 | Unassigned                 | YES       |     1 |
-|  1 |  0 |  0 | `RIGHT`                    | NO        |     0 |
-|  1 |  0 | -1 | Unassigned                 | MAYBE     |    -1 |
-|  1 | -1 |  1 | Unassigned                 | YES       |     1 |
-|  1 | -1 |  0 | Unassigned                 | MAYBE     |    -1 |
-|  1 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
-|  0 |  1 |  1 | `CHARM` / `LEFT`—ambiguous | YES       |     1 |
-|  0 |  1 |  0 | Unassigned                 | NO        |     0 |
-|  0 |  1 | -1 | Unassigned                 | MAYBE     |    -1 |
-|  0 |  0 |  1 | Unassigned                 | NO        |     0 |
-|  0 |  0 |  0 | `DOWN`                     | NO        |     0 |
-|  0 |  0 | -1 | Unassigned                 | NO        |     0 |
-|  0 | -1 |  1 | Unassigned                 | MAYBE     |    -1 |
-|  0 | -1 |  0 | Unassigned                 | NO        |     0 |
-|  0 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
-| -1 |  1 |  1 | Unassigned                 | YES       |     1 |
-| -1 |  1 |  0 | Unassigned                 | MAYBE     |    -1 |
-| -1 |  1 | -1 | Unassigned                 | MAYBE     |    -1 |
-| -1 |  0 |  1 | Unassigned                 | MAYBE     |    -1 |
-| -1 |  0 |  0 | Unassigned                 | NO        |     0 |
-| -1 |  0 | -1 | Unassigned                 | MAYBE     |    -1 |
-| -1 | -1 |  1 | Unassigned                 | MAYBE     |    -1 |
-| -1 | -1 |  0 | Unassigned                 | MAYBE     |    -1 |
-| -1 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
+| Input A | Input B | Input C | State     |
+| ------: | ------: | ------: | --------- |
+|       1 |       1 |       1 | `UP`      |
+|       0 |       0 |       0 | `DOWN`    |
+|       1 |       1 |       0 | `STRANGE` |
+|       0 |       1 |       1 | `CHARM`   |
+|       1 |       0 |       1 | `LEFT`    |
+|       1 |       0 |       0 | `RIGHT`   |
+
 
 ```
-*Document generated for code review. The physics vocabulary is intentional and metaphorical; the C implementation is literal and deterministic.*
+## 8. My  cubit classification 
+```md
