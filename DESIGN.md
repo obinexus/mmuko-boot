@@ -362,9 +362,9 @@ Every claim above can be checked against the source:
 
 ---
 
-## 8 .
+## 8. My  cubit classification 
 ```md
-|  A |  B |  C | Your cubit classification  | Consensus | Value |
+|  A |  B |  C | My  cubit classification  | Consensus | Value |
 | -: | -: | -: | -------------------------- | --------- | ----: |
 |  1 |  1 |  1 | `UP`                       | YES       |     1 |
 |  1 |  1 |  0 | `STRANGE`                  | YES       |     1 |
