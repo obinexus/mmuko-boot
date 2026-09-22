@@ -362,4 +362,37 @@ Every claim above can be checked against the source:
 
 ---
 
+## 8 .
+```md
+|  A |  B |  C | Your cubit classification  | Consensus | Value |
+| -: | -: | -: | -------------------------- | --------- | ----: |
+|  1 |  1 |  1 | `UP`                       | YES       |     1 |
+|  1 |  1 |  0 | `STRANGE`                  | YES       |     1 |
+|  1 |  1 | -1 | Unassigned                 | YES       |     1 |
+|  1 |  0 |  1 | Unassigned                 | YES       |     1 |
+|  1 |  0 |  0 | `RIGHT`                    | NO        |     0 |
+|  1 |  0 | -1 | Unassigned                 | MAYBE     |    -1 |
+|  1 | -1 |  1 | Unassigned                 | YES       |     1 |
+|  1 | -1 |  0 | Unassigned                 | MAYBE     |    -1 |
+|  1 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
+|  0 |  1 |  1 | `CHARM` / `LEFT`—ambiguous | YES       |     1 |
+|  0 |  1 |  0 | Unassigned                 | NO        |     0 |
+|  0 |  1 | -1 | Unassigned                 | MAYBE     |    -1 |
+|  0 |  0 |  1 | Unassigned                 | NO        |     0 |
+|  0 |  0 |  0 | `DOWN`                     | NO        |     0 |
+|  0 |  0 | -1 | Unassigned                 | NO        |     0 |
+|  0 | -1 |  1 | Unassigned                 | MAYBE     |    -1 |
+|  0 | -1 |  0 | Unassigned                 | NO        |     0 |
+|  0 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
+| -1 |  1 |  1 | Unassigned                 | YES       |     1 |
+| -1 |  1 |  0 | Unassigned                 | MAYBE     |    -1 |
+| -1 |  1 | -1 | Unassigned                 | MAYBE     |    -1 |
+| -1 |  0 |  1 | Unassigned                 | MAYBE     |    -1 |
+| -1 |  0 |  0 | Unassigned                 | NO        |     0 |
+| -1 |  0 | -1 | Unassigned                 | MAYBE     |    -1 |
+| -1 | -1 |  1 | Unassigned                 | MAYBE     |    -1 |
+| -1 | -1 |  0 | Unassigned                 | MAYBE     |    -1 |
+| -1 | -1 | -1 | Unassigned                 | MAYBE     |    -1 |
+
+```
 *Document generated for code review. The physics vocabulary is intentional and metaphorical; the C implementation is literal and deterministic.*
