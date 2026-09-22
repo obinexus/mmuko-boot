@@ -361,7 +361,7 @@ Every claim above can be checked against the source:
    ```
 
 ---
-### 8.  
+### 8. 
 ```md
 | Input A | Input B | Input C | State     |
 | ------: | ------: | ------: | --------- |
@@ -372,7 +372,7 @@ Every claim above can be checked against the source:
 |       1 |       0 |       1 | `LEFT`    |
 |       1 |       0 |       0 | `RIGHT`   |
 
-
+---
+111 → UP, 000 → DOWN, 110 → STRANGE, 011 → CHARM, 101 → LEFT, 100 → RIGHT.
 ```
-## 8. My  cubit classification 
-```md
+
